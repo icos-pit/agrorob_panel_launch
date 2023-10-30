@@ -68,12 +68,15 @@ def generate_launch_description():
         #     output='screen'
         # ),
 
-        IncludeLaunchDescription(     
-            PythonLaunchDescriptionSource(
-                    os.path.join(get_package_share_directory('agrorob_launch'),
-                                'launch/all_nodes.launch.py')
-                ),
-        ),
+        # IncludeLaunchDescription(     
+        #     PythonLaunchDescriptionSource(
+        #             os.path.join(get_package_share_directory('agrorob_launch'),
+        #                         'launch/all_nodes.launch.py')
+        #         ),
+        # ),
+
+
+        
        
        
  
