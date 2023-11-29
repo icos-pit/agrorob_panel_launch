@@ -75,7 +75,26 @@ def generate_launch_description():
         #         ),
         # ),
 
+        ExecuteProcess(
+            cmd=["rm", "-rf", "$HOME/.cache/rviz_satellite"],
+            output='screen'
+        ),
 
+
+        IncludeLaunchDescription(     # agrorob visualization
+            PythonLaunchDescriptionSource(
+                    os.path.join(get_package_share_directory('agrorob_visualization'),
+                                'launch/agrorob_rviz.launch.py')
+                ),
+        ),
+        IncludeLaunchDescription(     # map on Rviz
+            XMLLaunchDescriptionSource(
+                os.path.join(get_package_share_directory('rviz_satellite'),
+                             'launch/demo.launch.xml')
+            ),
+        ),
+
+#ros2 launch rviz_satellite demo.launch.xml
         
        
        
